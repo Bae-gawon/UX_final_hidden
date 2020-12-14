@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>There is no planet B</title>
+	<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@200; 300;700&display=swap" rel="stylesheet">
+</head>
+<style type="text/css">
+	html{font-family: 'Work Sans', sans-serif; background: black;}
+	body,p{margin: 0;}
+	section{width: 1200px; margin: auto; position: relative;}
+	img{width: 100%; position: absolute;}
+	.height1{height: 1500px}
+	.height2{height: 2860px}
+
+	.font1{font-size: 175pt; font-weight: 200;}
+	.color{color: #00BCC5;}
+
+	#city{position: fixed; bottom: -200px; right: 0px; width: 100%; }
+	#back_moon{top: 0px; width: 100%; opacity: 35%;}
+	#moon{top: 50px; width: 30%;}
+	#earth{ top: 300px; right: -100px; width: 100%;}
+	#space_man{left:0px; top: 500px; width: 10%}
+
+	.z{z-index: 3}
+	.w{width: 20%}
+
+	#ice{left: 0px;}
+	#human{width: 30%; right: 0px; animation: rr 3s infinite linear;}
+	#man{top: 1300px;}
+	#man1{width: 30%; left:320px; top: 350px;}
+	#woman{width: 40%; top: 1550px; left: 600px}
+	@keyframes rr{ to{ transform:rotate(360deg); } }
+
+</style>
+<body>
+	<p class="font1 color">THERE IS NO PLANET B</p>
+	<img src="1.png" class="drag z w" style="top:100px; left:200px;">
+	<img src="2.png" class="drag z w" style="top:1300px; left:300px;">
+	<img src="3.png" class="drag z w" style="top: 1700px; left:250px;">
+	<img src="4.png" class="drag z w" style="top: 500px; left:1300px;">
+	<img src="5.png" class="drag z w" style="top: 800px; left: 900px;">
+	<img src="6.png" class="drag z w" style="top: 1000px; left: 800px;">
+	<img src="7.png" class="drag z w" style="top: 1200px; left: 700px; ">
+	<img src="8.png" class="drag z w" style="top: 1000px; left: 600px;">
+	<img src="9.png" class="drag z w" style="top: 1100px; left: 1100px;">
+	<img src="10.png" class="drag z w" style="top: 1500px; left :1200px;">
+	<img src="11.png" class="drag z w" style="top: 1200px; left:900px;">
+	<img src="12.png" class="drag z w" style="top: 1400px; left:800px;">
+	<img src="13.png" class="drag z w" style="top:1500px; left:600px;">
+	<img src="14.png" class="drag z w" style="top:1500px; left:800px;">
+	<img src="15.png" class="drag z w" style="top:1000px; left:400px;">
+	<img src="16.png" class="drag z w" style="top:1500px; left:200px;">
+	<img src="17.png" class="drag z w" style="top:1500px; left:100px;">
+	<img src="18.png" class="drag z w" style="top:1500px; left:600px;">
+	<img src="19.png" class="drag z w" style="top:1500px; left:900px;">
+	<img src="20.png" class="drag z w" style="top:1400px; left:1000px;">
+	<img src="21.png" class="drag z w" style="top:1650px; left:800px;">
+	<img src="22.png" class="drag z w" style="top:1600px; left:1000px;">
+	<img src="23.png" class="drag z w" style="top:1450px; left:1100px;">
+	
+<section class="height1">
+	<img src="back.jpg" id="back_moon">
+	<img src="moon.jpg" id="moon">
+	<img src="earth.png" id="earth">
+	<img src="space_man.png" id="space_man">
+</section>
+<img src="city.png" id="city">
+<img src="ice.png" id="ice">
+<section class="height2">
+	<img src="man1.png" id="man1">
+	<img src="3d.png" id="human">
+	<img src="man.png" id="man">
+	<img src="woman.png" id="woman">
+</section>
+
+<script type="text/javascript">
+		//드래그앤 드롭 코드 시작	
+	(function(){
+	var d = false;
+	var target,cx,cy,lx,ly;
+	var t = document.getElementsByClassName("drag");
+	for(var i=0; i<t.length; i++){
+	t[i].style.display = "block";
+	t[i].style.position = "absolute";
+	t[i].style.cursor = "pointer";
+	t[i].ondragstart = function(e){e.preventDefault();};
+	t[i].onmousedown = function(e){ d = true; target = e.target; cx = e.clientX; cy = e.clientY; lx=parseInt(e.target.style.left); ly=parseInt(e.target.style.top);console.log(lx,ly);}
+	t[i].onmouseup = function(){ d = false;}
+	window.onmousemove = function(e){
+	if(d){ target.style.left = (lx + e.clientX - cx) + "px"; target.style.top = (ly + e.clientY - cy) + "px";}
+	}
+	}
+	})();
+	//드래그앤 드롭 코드 끝
+</script>
+
+</body>
+</html>
